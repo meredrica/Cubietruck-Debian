@@ -43,6 +43,8 @@ aur debootstrap
 aur uboot-mkimage
 #aur binfmt-support
 
-# call main build script
+# go back to original folder
+cd $SRC
 
+# call main build script
 $SRC/build.sh
