@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # --- Configuration -------------------------------------------------------------
 VERSION="CTDebian 1.3"
 DEST_LANG="en_US"
@@ -10,19 +9,8 @@ DISPLAY=3  # "0:none; 1:lcd; 2:tv; 3:hdmi; 4:vga"
 SRC=$(pwd)
 set -e
 
-#Requires root ..
-if [ "$UID" -ne 0 ]
-  then echo "Please run as root"
-  exit
-fi
 echo "Building Cubietruck-Debian in $DEST from $SRC"
 sleep 3
-#--------------------------------------------------------------------------------
-# Downloading necessary files
-#--------------------------------------------------------------------------------
-echo "------ Downloading necessary files"
-apt-get -qq -y install binfmt-support bison build-essential ccache debootstrap flex gawk gcc-arm-linux-gnueabi gcc-arm-linux-gnueabihf gettext git linux-headers-generic linux-image-generic lvm2 qemu-user-static texinfo texlive u-boot-tools uuid-dev zlib1g-dev unzip libncurses5-dev pkg-config libusb-1.0-0-dev
-
 #--------------------------------------------------------------------------------
 # Preparing output / destination files
 #--------------------------------------------------------------------------------
